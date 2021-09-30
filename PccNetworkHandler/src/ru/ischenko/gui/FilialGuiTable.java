@@ -13,6 +13,7 @@ import ru.ischenko.logic.Network;
 public class FilialGuiTable extends JPanel {
 	private static final long serialVersionUID = -1672772373453643620L;
 	private JTable table;
+/////////////////////////////////////////////////////////////////////////////////////////	
 	public class NetTableModel extends AbstractTableModel{
 		private final Vector<Network> networks;
 		private final String[] columnNames = new String[] {"Filial","Location","Address","Devices found"};
@@ -23,37 +24,53 @@ public class FilialGuiTable extends JPanel {
 		}
 		
 		@Override
+		public Class<?> getColumnClass(int columnIndex) {
+			return columnClass[columnIndex];
+		}
+
+		@Override
+		public String getColumnName(int column) {
+			return columnNames[column];
+		}
+
+		@Override
 		public int getRowCount() {
-			// TODO Auto-generated method stub
-			return 0;
+			return networks.capacity();
 		}
 
 		@Override
 		public int getColumnCount() {
-			// TODO Auto-generated method stub
-			return 0;
+			return columnNames.length;
 		}
 
 		@Override
 		public Object getValueAt(int rowIndex, int columnIndex) {
-			// TODO Auto-generated method stub
+			Network row = networks.get(rowIndex);
+	        if(0 == columnIndex) {
+	            return row.getFilial();
+	        }
+	        else if(1 == columnIndex) {
+	            return row.getLocation();
+	        }
+	        else if(2 == columnIndex) {
+	            return row.getAddress();
+	        }
+	        else if(3 == columnIndex) {
+	            return row.isDevicefull();
+	        }
 			return null;
 		}
 	}
-		
-	public FilialGuiTable(Vector<Vector<String>> networks){
+/////////////////////////////////////////////////////////////////////////////////////////		
+	public FilialGuiTable(Vector<Network> networks){
 		super(new BorderLayout());
-
-		Vector<String> colNames = new Vector<String>();
-		final String[] colStaticNames = {"Filial","Location","Address","Devices found"};
-		for(int i = 0; i < colStaticNames.length; i++ ) colNames.add(colStaticNames[i]);
-		DefaultTableModel tm = new DefaultTableModel(networks,colNames);
+		NetTableModel tm = new NetTableModel(networks);
 		table = new JTable(tm);
 		table.setShowGrid(false);
 		add(table, BorderLayout.CENTER);
 		setVisible(true);
 	}
-
+/////////////////////////////////////////////////////////////////////////////////////////
 	public JTable getTable() {
 		return table;
 	}

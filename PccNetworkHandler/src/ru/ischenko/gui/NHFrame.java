@@ -3,6 +3,8 @@ package ru.ischenko.gui;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
+import ru.ischenko.logic.Network;
+
 import java.awt.BorderLayout;
 import java.util.Vector;
 
@@ -12,7 +14,7 @@ public class NHFrame extends JFrame{
  */
 	private static final long serialVersionUID = -7081735279000940204L;
 	
-	public NHFrame(String title, Vector<Vector<String>> networks) {
+	public NHFrame(String title, Vector<Network> networks) {
 		super(title);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());

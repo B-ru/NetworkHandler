@@ -11,8 +11,16 @@ public class Network {
 
 	private String filial;
 	private String location;
-	private String network;
-	private boolean devicefull;
+	private String address;
+	private boolean devicefull = false;
+	
+	
+	public Network(String filial, String location, String address) {
+		super();
+		setFilial(filial);
+		setLocation(location);
+		setAddress(address);
+	}
 	
 	public String getFilial() {
 		return filial;
@@ -26,11 +34,11 @@ public class Network {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public String getNetwork() {
-		return network;
+	public String getAddress() {
+		return address;
 	}
-	public void setNetwork(String network) {
-		this.network = network;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public boolean isDevicefull() {
 		return devicefull;
