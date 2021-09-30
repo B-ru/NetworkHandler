@@ -35,7 +35,7 @@ public class FilialGuiTable extends JPanel {
 
 		@Override
 		public int getRowCount() {
-			return networks.capacity();
+			return networks.size();
 		}
 
 		@Override
