@@ -21,16 +21,16 @@ public class FilialGuiTable extends JPanel {
 		@Override
 		public Object getValueAt(int rowIndex, int columnIndex) {
 			Network row = networks.get( rowIndex );
-	        if		( 0 == columnIndex ) return row.getFilial		( );
-	        else if	( 1 == columnIndex ) return row.getLocation		( );
-	        else if ( 2 == columnIndex ) return row.getAddress		( );
-	        else if ( 3 == columnIndex ) return row.isDevicefull	( );
+	        if		( 0 == columnIndex ) return row.getFilial	( );
+	        else if	( 1 == columnIndex ) return row.getLocation	( );
+	        else if ( 2 == columnIndex ) return row.getAddress	( );
+	        else if ( 3 == columnIndex ) return row.isDevicefull( );
 			return null;
 		}
-		@Override public Class		getColumnClass	( int columnIndex )	{ return columnClass[ columnIndex ]; }
-		@Override public String 	getColumnName	( int column ) 		{ return columnNames[ column ];		 }
-		@Override public int 		getRowCount		( ) 				{ return networks.size( );			 }
-		@Override public int 		getColumnCount	( )					{ return columnNames.length;		 }
+		@Override public Class	getColumnClass	( int columnIndex )	{ return columnClass[ columnIndex ]; }
+		@Override public String getColumnName	( int column ) 		{ return columnNames[ column ];		 }
+		@Override public int 	getRowCount		( ) 				{ return networks.size( );			 }
+		@Override public int 	getColumnCount	( )					{ return columnNames.length;		 }
 	}
 /////////////////////////////////////////////////////////////////////////////////////////
 	public FilialGuiTable( Vector< Network > networks ){
