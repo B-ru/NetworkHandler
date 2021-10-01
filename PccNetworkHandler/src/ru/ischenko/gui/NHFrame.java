@@ -1,10 +1,7 @@
 package ru.ischenko.gui;
-
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
-
 import ru.ischenko.logic.Network;
-
 import java.awt.BorderLayout;
 import java.util.Vector;
 

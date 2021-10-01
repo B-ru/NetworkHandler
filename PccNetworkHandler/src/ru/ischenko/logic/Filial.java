@@ -1,5 +1,4 @@
 package ru.ischenko.logic;
-
 import java.util.Vector;
 
 public class Filial {
@@ -8,8 +7,8 @@ public class Filial {
  * i.e. it contains Networks instances as attributes 
  */
 	private String 			name;
-	private Vector<String>	locations = new 	Vector<String>( ); 
-	private Vector<Network> deck = new 		Vector<Network>( );
+	private Vector<String>	locations 	= new 		Vector<String>	( ); 
+	private Vector<Network> deck 		= new 		Vector<Network>	( );
 	/////////////////////////////////////////////////////////////////////////////////////
 	public String 			getName		( ) 						{ return name; 							}
 	public void 			setName		( String name )				{ this.name = name;						}

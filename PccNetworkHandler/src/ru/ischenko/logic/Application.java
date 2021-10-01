@@ -1,5 +1,4 @@
 package ru.ischenko.logic;
-
 import ru.ischenko.gui.NHFrame;
 
 public class Application {
