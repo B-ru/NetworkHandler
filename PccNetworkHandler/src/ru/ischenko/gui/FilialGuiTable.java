@@ -6,7 +6,6 @@ import java.util.Vector;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
 
 import ru.ischenko.logic.Network;
 
@@ -15,6 +14,7 @@ public class FilialGuiTable extends JPanel {
 	private JTable				table;
 /////////////////////////////////////////////////////////////////////////////////////////	
 	public class NetTableModel extends AbstractTableModel{
+		private static final long serialVersionUID = 5606294230630803391L;
 		private final Vector<Network>	networks;
 		private final String [ ]		columnNames = new String[ ] {	"Filial","Location","Address","Devices found"			};
 		private final Class  [ ]		columnClass = new Class	[ ] {	String.class, String.class, String.class, Boolean.class	};
@@ -29,7 +29,7 @@ public class FilialGuiTable extends JPanel {
 	        else if ( 3 == columnIndex ) return row.isDevicefull	( );
 			return null;
 		}
-		@Override public Class<?>	getColumnClass	( int columnIndex )	{ return columnClass[ columnIndex ]; }
+		@Override public Class		getColumnClass	( int columnIndex )	{ return columnClass[ columnIndex ]; }
 		@Override public String 	getColumnName	( int column ) 		{ return columnNames[ column ];		 }
 		@Override public int 		getRowCount		( ) 				{ return networks.size( );			 }
 		@Override public int 		getColumnCount	( )					{ return columnNames.length;		 }
