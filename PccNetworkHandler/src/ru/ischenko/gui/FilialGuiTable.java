@@ -36,12 +36,12 @@ public class FilialGuiTable extends JPanel {
 	}
 /////////////////////////////////////////////////////////////////////////////////////////		
 	public FilialGuiTable( Vector<Network> networks ){
-		super( new BorderLayout( ) );
-		NetTableModel tm = new NetTableModel( networks );
-		table = new JTable( tm );
-		table.setShowGrid( false );
-		add( table, BorderLayout.CENTER );
-		setVisible( true );
+		super				( new BorderLayout( ) );
+		NetTableModel tm	= new NetTableModel( networks );
+		table				= new JTable( tm );
+		table				.setShowGrid( false );
+		add					( table, BorderLayout.CENTER );
+		setVisible			( true );
 	}
 /////////////////////////////////////////////////////////////////////////////////////////
 	public JTable 	getTable	( ) 				{ return table; }
