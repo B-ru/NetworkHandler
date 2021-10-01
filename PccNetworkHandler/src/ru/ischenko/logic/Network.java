@@ -8,11 +8,11 @@ package ru.ischenko.logic;
  * <br>devicefull 
  */
 public class Network {
-
 	private String 	filial;
 	private String 	location;
 	private String 	address;
 	private boolean devicefull = false;
+	/////////////////////////////////////////////////////////////////////////////////////
 	public Network(String filial, String location, String address) {
 		super();
 		setFilial(filial);
