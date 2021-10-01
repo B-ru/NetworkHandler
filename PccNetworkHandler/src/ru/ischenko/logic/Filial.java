@@ -25,11 +25,9 @@ public class Filial {
 	/////////////////////////////////////////////////////////////////////////////////////
 	@Override 
 	public String toString() {
-		StringBuilder outbuff=new StringBuilder();
-		outbuff.append(
-			String.format("%-44.44s\n--------------------------------------------\n", getName())
-		);
-		deck.forEach(net -> outbuff.append(net.toString() + "\n"));
+		StringBuilder outbuff 	= new StringBuilder( );
+		outbuff					.append	( String.format( "%-44.44s\n--------------------------------------------\n", getName( ) ) );
+		deck					.forEach( net -> outbuff.append( net.toString() + "\n" ) );
 		return outbuff.toString();
 	}
 }
